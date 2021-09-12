@@ -38,25 +38,28 @@ function loadData(){
     fetch(url,{
         method:'GET'
     }).then(msg => msg.json())
-      .then(msg => {
-            msg.map(e=>{
-                if(e.id === 1){
-                    let en = e.id
-                    let ulen = doc.createElement('ul')
-                    ulen.append(en)
-                    msgen.append(ulen)
-                }else if(e.id === 2){
-                    let esp = e.id
-                    let ules = doc.createElement('ul')
-                    ules.append(esp)
-                    msges.append(ules)
-                }else if(e.id === 3){
-                    let ptbr = e.id
-                    let ulpt = doc.createElement('ul')
-                    ulpt.append(ptbr)
-                    msgpt.append(ulpt)
-                }
-            })
+      .then(msg =>{
+          msg.map(e=>{
+             if(e.id === 1){
+                
+                 let en  = e.msg
+                 createData(msgen,en,'ul')
+                 console.log(en)
+
+             }else if(e.id === 2){
+
+                let es  = e.msg
+                createData(msges,es,'ul')
+                console.log(es)
+
+             }else if(e.id === 3){
+                
+                let pt  = e.msg
+                createData(msgpt,pt,'ul')
+                console.log(pt)
+
+             }
+          })
       })
       .catch(err =>{
             $('#card').hide()
@@ -73,3 +76,9 @@ function Erro(){
 }
 
 Erro()
+
+function createData(positioned,el,Obj){
+    let oo = doc.createElement(`${Obj}`)
+    oo.innerHTML = el
+    positioned.append(oo)
+}
