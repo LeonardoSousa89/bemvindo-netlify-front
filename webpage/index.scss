@@ -5,9 +5,15 @@ $backLeft:#01568C;
 $backRight:#046F8C;
 $headerFooter:#046F8C;
 $main:#048C80;
+$light:whitesmoke;
 $null:0;
-$fullHV:100vh;
-$fullWV:100vw;
+$fullVH:100vh;
+$fullVW:100vw;
+$fullVHPer:100%;
+$fullVWPer:100%;
+$pad:5vw;
+$hide:hidden;
+$small:small;
 
 @mixin _DisplayG($display,$co,$row,$areas){
     display:$display;
@@ -24,6 +30,16 @@ $fullWV:100vw;
 @mixin _area($a){
     grid-area:$a;
 }
+%_tglitch{
+    text-shadow:0px 0px 5px black;
+}
+%_space{
+    letter-spacing:3px;
+}
+%pane{
+    border:solid 1px $light;
+    box-shadow:0px 0px 5px $light;
+}
 @mixin f_size($size){
     font-size:$size;
 }
@@ -33,26 +49,69 @@ $fullWV:100vw;
     font-family: 'Passion One', cursive;
 }
 body{
+    margin:$null;
+    font-family: 'Passion One', cursive;
     background:linear-gradient(63deg, $backLeft 45%, $backRight 55%)no-repeat;
-    color:$color;
-    height:$fullHV;
-    width:$fullWV;
+    color:$light;
+    height:$fullVH;
+    width:$fullVW;
+    overflow:$hide;
+
+    @include _DisplayF(flex,column,center,center);
 
         .container{
-            height:$fullHV;
-            width:$fullWV;
-        
+            height:90%;
+            width:$fullVW;
+            padding:1vh;
+            @extend %pane;
+
+            
+            @include _DisplayG( grid, 
+                                1fr, 
+                                28% 60% 8%, 
+                                'header header'
+                                'main main'
+                                'footer footer'
+                                );
+
                 header{
                     @include _area(header);
+                    @include f_size(8vh);
+                    @extend %_tglitch;
+                    @extend %_space;
+                    @extend %pane;
+                    background-color:$headerFooter;
+                    height:$fullVHPer;
+                    width:$fullVWPer;
+                    padding:$pad;
+                    @include _DisplayF(flex,row,flex-start,start);
                 }
                 main{
                     @include _area(main);
+                    @include f_size(5vh);
+                    @extend %_tglitch;
+                    @extend %_space;
+                    @extend %pane;
+                    height:$fullVHPer;
+                    width:$fullVWPer;
+
+                    padding:10px;
                 }
                 footer{
                     @include _area(footer);
+                    @include f_size($small);
+                    @extend %_tglitch;
+                    @extend %_space;
+                    @extend %pane;
+                    background-color:$headerFooter;
+                    height:$fullVHPer;
+                    width:$fullVWPer;
+                    @include _DisplayF(flex,row,flex-end,end);
+                    
+                    padding:10px;
                 }
-                strong{
-                    @include f_size(xx-large);
-                }
+
+
+
         }
 }

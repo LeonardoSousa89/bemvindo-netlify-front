@@ -1,21 +1,63 @@
 @import url("https://fonts.googleapis.com/css2?family=Passion+One&display=swap");
+body .container header, body .container main, body .container footer {
+  text-shadow: 0px 0px 5px black; }
+
+body .container header, body .container main, body .container footer {
+  letter-spacing: 3px; }
+
+body .container, body .container header, body .container main, body .container footer {
+  border: solid 1px whitesmoke;
+  box-shadow: 0px 0px 5px whitesmoke; }
+
 * {
   margin: 0;
   font-family: 'Passion One', cursive; }
 
 body {
+  margin: 0;
+  font-family: 'Passion One', cursive;
   background: linear-gradient(63deg, #01568C 45%, #046F8C 55%) no-repeat;
-  color: #06BF7C;
+  color: whitesmoke;
   height: 100vh;
-  width: 100vw; }
+  width: 100vw;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
   body .container {
-    height: 100vh;
-    width: 100vw; }
+    height: 90%;
+    width: 100vw;
+    padding: 1vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 28% 60% 8%;
+    grid-template-areas: "header header" "main main" "footer footer"; }
     body .container header {
-      grid-area: header; }
+      grid-area: header;
+      font-size: 8vh;
+      background-color: #046F8C;
+      height: 100%;
+      width: 100%;
+      padding: 5vw;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: start; }
     body .container main {
-      grid-area: main; }
+      grid-area: main;
+      font-size: 5vh;
+      height: 100%;
+      width: 100%;
+      padding: 10px; }
     body .container footer {
-      grid-area: footer; }
-    body .container strong {
-      font-size: xx-large; }
+      grid-area: footer;
+      font-size: small;
+      background-color: #046F8C;
+      height: 100%;
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      align-items: end;
+      padding: 10px; }
