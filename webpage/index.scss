@@ -60,11 +60,11 @@ body{
     @include _DisplayF(flex,column,center,center);
 
         .container{
-            height:90%;
             width:$fullVW;
             padding:1vh;
             @extend %pane;
-
+            
+            height:90%;
             
             @include _DisplayG( grid, 
                                 1fr, 
@@ -94,8 +94,16 @@ body{
                     @extend %pane;
                     height:$fullVHPer;
                     width:$fullVWPer;
-
+                    @include _DisplayF(flex,column,center,center);
+                    
+                    overflow:$hide;
                     padding:10px;
+
+                    #card, #errorcard{
+                        width:80%;
+                        text-shadow:0px 0px 0px ;
+                    }
+
                 }
                 footer{
                     @include _area(footer);
