@@ -1,8 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Passion+One&display=swap");
-body .container header, body .container main, body .container footer {
+body .container header, body .container main {
   text-shadow: 0px 0px 5px black; }
 
-body .container header, body .container main, body .container footer {
+body .container header, body .container main {
   letter-spacing: 3px; }
 
 body .container, body .container header, body .container main, body .container footer {
@@ -68,4 +68,7 @@ body {
       flex-direction: row;
       justify-content: flex-end;
       align-items: end;
-      padding: 10px; }
+      letter-spacing: 1px;
+      color: black;
+      text-shadow: 0px 0px 5px white;
+      padding: 5px; }
