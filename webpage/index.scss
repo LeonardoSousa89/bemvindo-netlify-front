@@ -118,6 +118,10 @@ body{
                     color:black;
                     text-shadow:0px 0px 5px white;
                     padding:5px;
+
+                    @media screen and(max-device-width:1023px) {
+                        @include f_size(x-small);
+                    }
                 }
 
 
