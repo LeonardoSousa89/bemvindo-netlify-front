@@ -1,10 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Bungee+Inline&display=swap');
 
 $color:#06BF7C;
-$back:#01568C;
+$backLeft:#01568C;
+$backRight:#046F8C;
 $headerFooter:#046F8C;
 $main:#048C80;
 $null:0;
+$fullHV:100vh;
+$fullWV:100vw;
 
 @mixin _DisplayG($display,$co,$row,$areas){
     display:$display;
@@ -20,10 +23,31 @@ $null:0;
     align-items:$align;
 }
 
+@mixin _area($a){
+    grid-area:$a;
+}
+
 *{
     margin:$null;
 }
 body{
-    background:$back;
+    background:linear-gradient(63deg, $backLeft 45%, $backRight 55%)no-repeat;
     color:$color;
+    height:$fullHV;
+    width:$fullWV;
+
+        .container{
+            height:$fullHV;
+            width:$fullWV;
+        
+                header{
+                    @include _area(header);
+                }
+                main{
+                    @include _area(main);
+                }
+                footer{
+                    @include _area(footer);
+                }
+        }
 }
