@@ -26,7 +26,7 @@ function loadDataTest(){
       })
 }
 
-loadDataTest()
+//loadDataTest()
 
 function loadData(){
     const msgpt = doc.querySelector('#msgpt')
@@ -65,7 +65,7 @@ function loadData(){
       })
 }
 
-//loadData()
+loadData()
 
 function Erro(){
     let erro = doc.querySelector('#erro')
