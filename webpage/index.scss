@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Bungee+Inline&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Passion+One&display=swap');
 
 $color:#06BF7C;
 $backLeft:#01568C;
@@ -15,20 +15,22 @@ $fullWV:100vw;
     grid-template-rows:$row;
     grid-template-areas:$areas;
 }
-
 @mixin _DisplayF($display,$direc,$content,$align){
     display:$display;
     flex-direction:$direc;
     justify-content:$content;
     align-items:$align;
 }
-
 @mixin _area($a){
     grid-area:$a;
+}
+@mixin f_size($size){
+    font-size:$size;
 }
 
 *{
     margin:$null;
+    font-family: 'Passion One', cursive;
 }
 body{
     background:linear-gradient(63deg, $backLeft 45%, $backRight 55%)no-repeat;
@@ -48,6 +50,9 @@ body{
                 }
                 footer{
                     @include _area(footer);
+                }
+                strong{
+                    @include f_size(xx-large);
                 }
         }
 }
