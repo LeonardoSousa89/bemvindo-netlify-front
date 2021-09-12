@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Inline&display=swap');
+
+$color:#06BF7C;
+$back:rgba(0,0,0,0.2);
+$null:0;
+
+@mixin _DisplayG($display,$co,$row,$areas){
+    display:$display;
+    grid-template-columns:$co;
+    grid-template-rows:$row;
+    grid-template-areas:$areas;
+}
+
+@mixin _DisplayF($display,$direc,$content,$align){
+    display:$display;
+    flex-direction:$direc;
+    justify-content:$content;
+    align-items:$align;
+}
+
+*{
+    margin:$null;
+}
+body{
+    background:$back;
+    color:$color;
+}
