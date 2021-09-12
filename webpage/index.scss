@@ -1,7 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Bungee+Inline&display=swap');
 
 $color:#06BF7C;
-$back:rgba(0,0,0,0.2);
+$back:#01568C;
+$headerFooter:#046F8C;
+$main:#048C80;
 $null:0;
 
 @mixin _DisplayG($display,$co,$row,$areas){
